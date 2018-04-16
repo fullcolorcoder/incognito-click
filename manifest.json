@@ -1,0 +1,21 @@
+{
+  "name": "Incognito Click",
+  "description": "Hold down 'A' while clicking on a link to open in an incognito window instead of right clicking.",
+  "manifest_version": 2,
+  "version": "0.0.0.2",
+  "permissions": ["tabs"],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "scripts": ["js/click-background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["vendor/jquery-3.3.1.min.js", "vendor/underscore.min.js", "js/click-content.js"]
+    }
+  ]
+}
